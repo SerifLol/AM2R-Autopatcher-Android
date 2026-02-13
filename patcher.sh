@@ -45,7 +45,6 @@ if ! [ -f /data/data/com.termux/files/usr/bin/apkmod ]; then
 fi
 
 #download the patch data
-git clone https://github.com/SerifLol/AM2R-Autopatcher-Android/raw/main/data
 if ! [ -d ~/storage ]; then
     #create if no
     termux-setup-storage
@@ -72,14 +71,14 @@ xdelta3 -dfs "${OUTPUT}"/data.win data/droid.xdelta  "${OUTPUT}"/game.droid
 rm "${OUTPUT}"/D3DX9_43.dll "${OUTPUT}"/AM2R.exe "${OUTPUT}"/data.win 
 
 #cp -RTp "${OUTPUT}"/ utilities/android/assets/
-if [ -f data/android/AM2R.ini ]; then
-    cp -p data/android/AM2R.ini "${OUTPUT}"/
+if [ -f ~/storage/downloads/AM2RAutopatcher/data/android/AM2R.ini ]; then
+    cp -p ~/storage/downloads/AM2RAutopatcher/data/android/AM2R.ini "${OUTPUT}"/
 fi
 
 
 # Music
 #mkdir -p utilities/android/assets/lang
-cp data/files_to_copy/*.ogg "${OUTPUT}"/
+cp ~/storage/downloads/AM2RAutopatcher/data/files_to_copy/*.ogg "${OUTPUT}"/
 
 echo ""
 echo -e "\033[0;32mInstall high quality in-game music? Increases filesize by 230 MB and may lag the game\!"
@@ -101,7 +100,7 @@ echo "Updating lang folder..."
 #remove old lang
 rm -R "${OUTPUT}"/lang/
 #install new lang
-cp -RTp data/files_to_copy/lang/ "${OUTPUT}"/lang/
+cp -RTp ~/storage/downloads/AM2RAutopatcher/data/files_to_copy/lang/ "${OUTPUT}"/lang/
 
 echo "Renaming music to lowercase..."
 #I can't figure out a better way to mass rename files to lowercase
@@ -114,7 +113,7 @@ rm temp.zip
 
 echo "Packaging APK..."
 #decompile the apk
-apkmod -d -i data/android/AM2RWrapper.apk -o AM2RWrapper
+apkmod -d -i ~/storage/downloads/AM2RAutopatcher/data/android/AM2RWrapper.apk -o AM2RWrapper
 #copy
 mv "${OUTPUT}" assets
 cp -Rp assets AM2RWrapper
