@@ -127,9 +127,6 @@ fi
 #Sign apk
 apkmod -s -i AM2R-"${VERSION}".apk -o AM2R-"${VERSION}"-signed.apk
 
-# Cleanup
-rm -R assets/ AM2RWrapper/ data/ AM2R-"${VERSION}".apk
-
 # Move signed APK
 mv AM2R-"${VERSION}"-signed.apk ~/storage/downloads/AM2RAutopatcher/Export/AM2R-"${VERSION}"-signed.apk
 
