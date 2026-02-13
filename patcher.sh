@@ -89,11 +89,8 @@ read -n1 INPUT
 echo ""
 
 if [ "$INPUT" = "y" ]; then
-    echo "Downloading HQ music..."
-    git clone https://github.com/AM2R-Community-Developers/AM2R-Autopatcher-Android/trunk/HDR_HQ_in-game_music
     echo "Copying HQ music..."
-    cp -f HDR_HQ_in-game_music/*.ogg "${OUTPUT}"/
-    rm -rf HDR_HQ_in-game_music/
+    cp -f ~/storage/downloads/AM2RAutopatcher/HDR_HQ_in-game_music/*.ogg "${OUTPUT}"/
 fi
 
 echo "Updating lang folder..."
@@ -134,7 +131,7 @@ apkmod -s -i AM2R-"${VERSION}".apk -o AM2R-"${VERSION}"-signed.apk
 rm -R assets/ AM2RWrapper/ data/ AM2R-"${VERSION}".apk
 
 # Move signed APK
-mv AM2R-"${VERSION}"-signed.apk ~/storage/downloads/AM2R-"${VERSION}"-signed.apk
+mv AM2R-"${VERSION}"-signed.apk ~/storage/downloads/AM2RAutopatcher/Export/AM2R-"${VERSION}"-signed.apk
 
 echo ""
 echo -e "\033[0;32mThe operation was completed successfully and the APK can be found in your Downloads folder as \"AM2R-${VERSION}-signed.apk\"."
