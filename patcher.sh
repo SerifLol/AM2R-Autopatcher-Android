@@ -64,7 +64,7 @@ else
 fi
 
 echo "Applying Android patch..."
-xdelta3 -dfs "${OUTPUT}"/data.win ~/storage/downloads/AM2RAutopatcher/droid.xdelta  "${OUTPUT}"/game.droid
+xdelta3 -dfs "${OUTPUT}"/data.win ~/storage/downloads/AM2RAutopatcher/data/droid.xdelta  "${OUTPUT}"/game.droid
 #cp data/android/AM2RWrapper.apk utilities/android/
 
 #delete unnecessary files
