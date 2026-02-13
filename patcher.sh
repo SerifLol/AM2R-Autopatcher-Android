@@ -45,7 +45,7 @@ if ! [ -f /data/data/com.termux/files/usr/bin/apkmod ]; then
 fi
 
 #download the patch data
-git clone https://github.com/SerifLol/AM2R-Autopatcher-Android/data
+git clone https://github.com/SerifLol/AM2R-Autopatcher-Android/tree/main/data
 
 #check if termux-storage has been setup
 if ! [ -d ~/storage ]; then
