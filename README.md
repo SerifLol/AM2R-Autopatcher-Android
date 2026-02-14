@@ -12,7 +12,7 @@ you must download this projects source code and put the source code in ~/storage
 directory should look like this
 
 
-AM2RAutolauncher/
+AM2RAutopatcher/
 
 ../HDR_HQ_in-game_music/
 
